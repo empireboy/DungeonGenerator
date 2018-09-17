@@ -140,8 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685e01e78be125549bbc1da7bd35bb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _width: 10
-  _height: 10
+  _width: 100
+  _height: 100
+  _seed: 0
+  test: {fileID: 1915631897549596, guid: e821613c1c6e61a40b54fb90aa9a9cd2, type: 2}
 --- !u!4 &395343002
 Transform:
   m_ObjectHideFlags: 0

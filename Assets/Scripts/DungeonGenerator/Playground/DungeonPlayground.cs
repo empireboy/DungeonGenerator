@@ -26,6 +26,17 @@ namespace DungeonGenerator
 				return _height;
 			}
 		}
+		[Tooltip("Used to initialize a pseudorandom Dungeon Generator")]
+		[SerializeField] private int _seed = 0;
+		public int Seed
+		{
+			get
+			{
+				return _seed;
+			}
+		}
+
+		public GameObject test;
 
 		public int[,] grid = new int[0, 0];
 
@@ -33,7 +44,7 @@ namespace DungeonGenerator
 		{
 			Randomize();
 
-			DebugGrid();
+			//DebugGrid();
 		}
 
 		public void Randomize()
@@ -44,7 +55,12 @@ namespace DungeonGenerator
 			{
 				for (int j = 0; j < _height; j++)
 				{
-					grid[i, j] = Random.Range(0, 2);
+					grid[i, j] = (int)(Mathf.PerlinNoise(i / 10f + _seed, j / 10f + _seed) * 10f);
+					GameObject test2 = Instantiate(test);
+					test2.transform.position = new Vector3(transform.position.x + i * test.transform.localScale.x, transform.position.y + j * test.transform.localScale.y, transform.position.z);
+					Color tmp = test2.GetComponent<SpriteRenderer>().color;
+					tmp.a = grid[i, j]/10f;
+					test2.GetComponent<SpriteRenderer>().color = tmp;
 				}
 			}
 		}
