@@ -20,7 +20,7 @@ Wat wil je bereiken met dit project? Formuleer dit kort, krachtig en haalbaar.
 ## Planning 
 | | Monday | Tuesday | Wednesday | Thursday | Friday |
 | --- | --- | --- | --- | --- | --- |
-|Week 1 | On this day I want to create a Github repository and add the project. I also want to update the readme file, and make a software analysis. I will also think about how I want to make a dungeon based algorithm, and if there are any existing algorithms. | I will start making the model of the dungeon generator. | I will make the model more generic, so I can change my code easier for future purpose.
+|Week 1 | Research and planning | Model start | Model finish | Generic model | Last changes
 |Week 2 |
 
 ## Sources
