@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _width: 30
   _height: 30
-  _seed: 0
+  _seed: 1
