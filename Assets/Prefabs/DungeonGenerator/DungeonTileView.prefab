@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224940134960252194}
   - component: {fileID: 222506932008522940}
   - component: {fileID: 114127547713927522}
+  - component: {fileID: 114986012363623716}
   m_Layer: 0
   m_Name: DungeonTileView
   m_TagString: Untagged
@@ -55,6 +56,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114986012363623716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1915631897549596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b47b681fc3f2542880e155db970a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &222506932008522940
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -1,27 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GridExtension;
 
 namespace DungeonGenerator
 {
 	[RequireComponent(typeof(GridLayoutGroup))]
 	[RequireComponent(typeof(RectTransform))]
-	public abstract class DungeonGeneratorView2D<T> : MonoBehaviour where T : Component
+	public abstract class DungeonGeneratorView2D<T> : MonoBehaviour where T : GridTile
 	{
-		[SerializeField] private T _tile;
+		[SerializeField] private GameObject _tile;
 
 		private Dictionary<string, Sprite> _tileSprites = new Dictionary<string, Sprite>();
 
 		protected T[,] _grid;
 
-		private void Start()
+		private void Awake()
 		{
-			Init(transform.root.GetComponentInChildren<DungeonGeneratorManager>().DungeonPlayground);
+			transform.root.GetComponentInChildren<DungeonGeneratorManager>().DungeonPlayground.OnGenerationFinished += Init;
 		}
 
 		public virtual void Init(DungeonPlayground dungeonPlayground)
 		{
+			RemoveAll();
+
 			GetComponent<GridLayoutGroup>().constraintCount = dungeonPlayground.Width;
 
 			_grid = new T[dungeonPlayground.Width, dungeonPlayground.Height];
@@ -30,7 +32,8 @@ namespace DungeonGenerator
 			{
 				for (int j = 0; j < dungeonPlayground.Height; j++)
 				{
-					_grid[i, j] = Instantiate(_tile, transform).GetComponent<T>();
+					GameObject newGridTile = Instantiate(_tile, transform);
+					_grid[i, j] = newGridTile.GetComponent<T>();
 				}
 			}
 		}
@@ -38,6 +41,19 @@ namespace DungeonGenerator
 		public void AddTileSprite(string name, Sprite tileSprite)
 		{
 			_tileSprites.Add(name, tileSprite);
+		}
+
+		private void RemoveAll()
+		{
+			T[] children = GetComponentsInChildren<T>();
+
+			if (children == null)
+				return;
+
+			for (int i = 0; i < children.Length; i++)
+			{
+				Destroy(children[i].gameObject);
+			}
 		}
 	}
 }

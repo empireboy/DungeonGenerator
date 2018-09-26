@@ -13,4 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _width: 30
   _height: 30
-  _seed: 1
+  _seed: 0
+  debug: 0
+  debugTilePosition: {x: 0, y: 0}
+  _useConnectivityAlgorithm: 1
+  _connectivitySize: 5

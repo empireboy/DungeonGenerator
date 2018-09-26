@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using GridExtension;
 
 namespace DungeonGenerator
 {
@@ -17,7 +18,26 @@ namespace DungeonGenerator
 		private void Awake()
 		{
 			if (_dungeonPlayground != null)
-				_dungeonPlayground.Randomize();
+				_dungeonPlayground.Generate();
+		}
+
+		private void Start()
+		{
+			//Pathfinding<DungeonTile> pathfinding = new Pathfinding<DungeonTile>(_dungeonPlayground.Grid, new Vector2(2, 13), new Vector2(25, 8));
+		}
+
+		private void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.Escape))
+				Application.Quit();
 		}
 	}
+
+	public enum TileTypes
+	{
+		Empty,
+		Wall,
+		Floor
+	}
+
 }
