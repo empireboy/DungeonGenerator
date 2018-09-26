@@ -29,8 +29,8 @@ Coming soon...
 ## Planning 
 | | Monday | Tuesday | Wednesday | Thursday | Friday |
 | --- | --- | --- | --- | --- | --- |
-|Week 1 | Research and planning | Model start | Model finish | Generic model | Last changes
-|Week 2 |
+|Week 1 | Research and Planning | Model Start | Model Finish | Generic Model | Last Changes
+|Week 2 | Room Connectivity Algorithm | Finish Room Connectivity | UI | Portfolio Start | Portfolio Finish
 
 ## Sources
 <!---
